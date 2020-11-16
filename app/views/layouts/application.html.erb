@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flix</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+ <head>
+  <title>Moview Review App</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+ </head>
+ <body>
+  <header>
+   <h1>Movie Review</h1>
+  </header>
+  <div class="content">
+   <%= yield %>
+  </div>
+  <footer>
+   <p>Copyright &copy; <%= Time.now.year%>
+    <%= link_to 'Angie Rodriguez - Developer', 'https://angierodriguez.dev/'%>
+   </p>
+  </footer>
+ </body>
 </html>
