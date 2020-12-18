@@ -9,14 +9,14 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-  <header>
+<body class="container">
+  <header class="header">
     <h1>Movie Review</h1>
   </header>
-  <div class="content">
+  <main class="content">
     <%= yield %>
-  </div>
-  <footer>
+  </main>
+  <footer class="footer">
     <p>Copyright &copy; <%= Time.now.year%>
       <%= link_to 'Angie Rodriguez - Developer', 'https://angierodriguez.dev/'%>
     </p>
