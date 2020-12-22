@@ -1,5 +1,4 @@
-<section>
-  <% @movies.each do |movie| %>
+<% @movies.each do |movie| %>
   <div>
     <h2>
       <%= link_to(movie.title, movie_path(movie)) %>
@@ -11,5 +10,4 @@
       <%= truncate(movie.description, length: 40, separator: ' ' ) %>
     </p>
   </div>
-  <% end %>
-</section>
+<% end %>

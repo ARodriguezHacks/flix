@@ -11,6 +11,7 @@ $orange: #e8890c;
 $yellow: #ffc107;
 $light-yellow: #ffc;
 $red: #dc3545;
+$coral: lightcoral;
 
 html {
   box-sizing: border-box;
@@ -21,6 +22,7 @@ html {
 *:after {
   box-sizing: inherit;
   margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -33,18 +35,42 @@ html {
     "f f f f f f f f f f f f";
 }
 
-.header {
+.nav {
   grid-area: h;
-  background: lightcoral;
+  background: $coral;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  h1 {
+    flex-grow: 1;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
 }
 
 .content {
   grid-area: c;
   background: rgb(216, 202, 202);
   min-height: calc(100vh - 140px);
+
+  > * {
+    padding: 1rem;
+    margin: 1rem;
+    border: 5px solid $coral;
+  }
 }
 
 .footer {
   grid-area: f;
   background: rgb(216, 145, 145);
+
+  > * {
+    text-align: center;
+  }
 }
