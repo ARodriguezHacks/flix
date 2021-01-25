@@ -1,0 +1,27 @@
+<section>
+  <h1>Add Movie</h1>
+
+  <%= form_with(model: @movie, local: true) do |f| %>
+    <%= f.label :title %>
+    <br />
+    <%= f.text_field :title %>
+    <br />
+    <%= f.label :description %>
+    <br />
+    <%= f.text_area :description, rows: 7 %>
+    <br />
+    <%= f.label :rating %>
+    <br />
+    <%= f.text_field :rating %>
+    <br />
+    <%= f.label :released_on %>
+    <br />
+    <%= f.date_field :released_on, {class: "date"} %>
+    <br />
+    <%= f.label :total_gross %>
+    <br />
+    <%= f.number_field :total_gross %>
+    <br />
+    <%= f.submit %>
+  <% end %>
+</section>
