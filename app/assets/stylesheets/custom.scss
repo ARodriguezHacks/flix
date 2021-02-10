@@ -72,3 +72,17 @@ html {
     text-align: center;
   }
 }
+
+form {
+  div.field_with_errors {
+    input,
+    textarea {
+      background-color: rgb(238, 238, 125);
+      color: rgb(236, 103, 103);
+    }
+  }
+}
+
+.errors {
+  background-color: rgb(238, 238, 125);
+}
