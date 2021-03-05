@@ -12,11 +12,12 @@
   <body class="container">
     <%= render "layouts/header" %>
     <main class="content">
+      <%= render "layouts/flash" %>
       <%= yield %>
     </main>
     <footer class="footer">
       <p>Copyright &copy; <%= Time.now.year%>
-        <%= link_to 'Angie Rodriguez - Developer', 'https://angierodriguez.dev/'%>
+        <%= link_to 'Angie Rodriguez - Software Developer', 'https://angierodriguez.dev/'%>
       </p>
     </footer>
   </body>
