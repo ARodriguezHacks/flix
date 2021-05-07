@@ -9,4 +9,14 @@
       <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: "Permanently delete your account?"} %>
     </div>
   <% end %>
+  <% if @reviews.present? %>
+    <h3>Reviews</h3>
+    <% @reviews.each do |r| %>
+      <div>
+        <%= link_to r.movie.title, r.movie %>
+        <%= time_ago_in_words(r.created_at) %> ago
+        <p><%= r.comment %></p>
+      </div>
+    <% end %>
+  <% end %>
 </section>
