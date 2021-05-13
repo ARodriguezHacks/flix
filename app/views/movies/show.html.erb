@@ -1,43 +1,56 @@
-<section>
-  <div>
-    <%= image_tag @movie.image_file_name %>
-  </div>
-  <h1>
-    <%= @movie.title %>
-  </h1>
-  <h2>
-    <%= year_of(@movie) %> &bull; <%= @movie.rating %>
-  </h2>
-  <div class="reviews">
-    <%= average_stars(@movie) %>
-    <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
-  </div>
-  <div>
-    <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
-    <%= link_to  "Write A Review", new_movie_review_path(@movie) %>
-  </div>
-  <p>
-    <%= @movie.description %>
-  </p>
-  <table>
-    <tr>
-      <th>Director:</th>
-      <td><%= @movie.director %> </td>
-    </tr>
-    <tr>
-      <th>Duration:</th>
-      <td><%= @movie.duration %> </td>
-    </tr>
-    <tr>
-      <th>Total Gross:</th>
-      <td><%= total_gross(@movie) %> </td>
-    </tr>
-  </table>
-  <% if current_user_admin? %>
-
-    <section>
-      <%= link_to  "Edit", edit_movie_path(@movie) %>
-      <%= link_to  "Delete", movie_path(@movie), method: :delete, data: { confirm: 'Are you sure?'} %>
-    </section>
-  <% end %>
-</section>
+<div>
+  <section>
+    <div>
+      <%= image_tag @movie.image_file_name %>
+    </div>
+    <h1>
+      <%= @movie.title %>
+    </h1>
+    <h2>
+      <%= year_of(@movie) %> &bull; <%= @movie.rating %>
+    </h2>
+    <div class="reviews">
+      <%= average_stars(@movie) %>
+      <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
+    </div>
+    <div>
+      <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
+      <%= link_to  "Write A Review", new_movie_review_path(@movie) %>
+    </div>
+    <p>
+      <%= @movie.description %>
+    </p>
+    <table>
+      <tr>
+        <th>Director:</th>
+        <td><%= @movie.director %> </td>
+      </tr>
+      <tr>
+        <th>Duration:</th>
+        <td><%= @movie.duration %> </td>
+      </tr>
+      <tr>
+        <th>Total Gross:</th>
+        <td><%= total_gross(@movie) %> </td>
+      </tr>
+    </table>
+  </section>
+  <aside>
+    <% if @fans.present? %>
+      <h4>Fans</h4>
+      <ul>
+        <% @fans.each do |user| %>
+          <li>
+            <%= link_to user.name, user %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </aside>
+</div>
+<% if current_user_admin? %>
+  <section>
+    <%= link_to  "Edit", edit_movie_path(@movie) %>
+    <%= link_to  "Delete", movie_path(@movie), method: :delete, data: { confirm: 'Are you sure?'} %>
+  </section>
+<% end %>
