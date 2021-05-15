@@ -3,6 +3,12 @@
     <div>
       <%= image_tag @movie.image_file_name %>
     </div>
+    <% if @favorite %>
+    <%= button_to "♡ Unfave", movie_favorites_path(@movie) %>
+    <% else %>
+      <%= button_to "♥️ Fave", movie_favorites_path(@movie) %>
+    <% end %>
+    <%= @fans.size %>
     <h1>
       <%= @movie.title %>
     </h1>
