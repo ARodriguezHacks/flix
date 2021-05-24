@@ -27,4 +27,12 @@ class Movie < ApplicationRecord
   def average_stars
     reviews.average(:stars) || 0.0
   end
+
+  def movies_filter
+    if params[:filter].in? %w(upcoming recent)
+      params[:filter]
+    else
+      :released
+    end
+  end
 end
