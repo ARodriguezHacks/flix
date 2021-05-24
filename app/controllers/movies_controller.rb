@@ -53,4 +53,12 @@ class MoviesController < ApplicationController
     params.require(:movie).
       permit(:title, :description, :rating, :released_on, :total_gross, :director, :duration, :image_file_name, genre_ids: [])
   end
+
+  def movies_filter
+    if params[:filter].in? %w(upcoming recent)
+      params[:filter]
+    else
+      :released
+    end
+  end
 end
