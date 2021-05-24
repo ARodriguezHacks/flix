@@ -28,5 +28,8 @@
   <%= f.label :image_file_name %>
   <%= f.text_field :image_file_name %>
   <%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
+  <div>
+    <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+  </div>
   <%= f.submit %>
 <% end %>
