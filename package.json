@@ -6,6 +6,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
+    "browserslist": "^4.16.5",
     "elliptic": "^6.5.4",
     "is-svg": "^4.2.2",
     "postcss": "^8.2.10",
