@@ -1,7 +1,7 @@
 <div>
   <section>
     <div>
-      <%= image_tag @movie.image_file_name %>
+      <%= main_image(@movie) %>
     </div>
     <%= fave_or_unfave_button(@movie, @favorite) %>
     <%= @fans.size %>
